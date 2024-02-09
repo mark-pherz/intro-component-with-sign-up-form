@@ -1,0 +1,147 @@
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+  --blue: hsl(248, 32%, 49%);
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+  background-color: var(--red);
+  background-image: url(./images/bg-intro-mobile.png);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-grid {
+  max-width: 350px;
+  margin: 30px clamp(1.563rem, -4.688rem + 13.021vw, 3.125rem);
+  display: grid;
+  gap: 20px;
+}
+
+.hero-section {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-section h1 {
+  font-weight: 600;
+  line-height: 1.25em;
+}
+
+.hero-section p {
+}
+
+.try-it-section {
+  background-color: var(--blue);
+  text-align: center;
+  padding: 20px 50px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 400;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.form-section {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.form-section,
+.try-it-section {
+  box-shadow: 0 7px rgba(0, 0, 0, 0.174);
+}
+
+.form-section form {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+.form-group > input {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--grayish-blue);
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.form-group > input:focus {
+  outline: none;
+  border-color: var(--dark-blue);
+}
+
+.form-section > form > button {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--green);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: +0.5px;
+}
+
+.form-section > form > button:hover {
+  background-color: #5aeaab;
+}
+
+.form-section .disclaimer {
+  color: var(--grayish-blue);
+  font-size: 0.75em;
+  padding: 0 20px;
+}
+
+.form-section .disclaimer .terms {
+  color: var(--red);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.warning {
+  border: 2px solid var(--red);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(./images/bg-intro-desktop.png);
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 960px;
+    column-gap: clamp(1.563rem, -7.188rem + 18.229vw, 3.75rem);
+  }
+
+  .hero-section {
+    grid-row: span 2;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .hero-section h1 {
+    font-size: 2.25em;
+  }
+}
