@@ -78,6 +78,28 @@ body {
   margin-bottom: 12px;
 }
 
+.form-group {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group img.error-icon {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  height: 20px;
+}
+
+.form-group span.error-message {
+  font-size: 0.625em;
+  font-style: italic;
+  color: var(--red);
+  font-weight: 500;
+}
+
 .form-group > input {
   width: 100%;
   padding: 15px 20px;
@@ -122,6 +144,15 @@ body {
 
 .warning {
   border: 2px solid var(--red);
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {
