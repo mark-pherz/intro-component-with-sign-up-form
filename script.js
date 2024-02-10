@@ -53,16 +53,30 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
     }
 
-    // prevent default anyways so you folks don't see your page crushed
     if (isValid) {
       e.preventDefault();
-      const body = document.querySelector("body");
-      body.innerHTML = "";
-      const code = `<video autoplay loop playsinline>
-      <source src="./images/proud.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>`;
-      body.innerHTML = code;
+      const video = document.createElement("video");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("preload", "auto");
+
+      video.style.position = "fixed";
+      video.style.top = "0";
+      video.style.left = "0";
+      video.style.width = "100vw";
+      video.style.height = "100vh";
+      video.style.objectFit = "cover";
+      video.style.zIndex = "1000";
+
+      const source = document.createElement("source");
+      source.src = "./images/proud.mp4";
+      source.type = "video/mp4";
+
+      video.appendChild(source);
+
+      document.body.innerHTML = "";
+      document.body.appendChild(video);
     }
   });
 });
